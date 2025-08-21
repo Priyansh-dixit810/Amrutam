@@ -64,7 +64,7 @@ function Benefits({ setStep, setUform }) {
 
     axios
       .post(
-        "http://localhost:8080/benefits",
+        "https://amrutam-backend-sly8.onrender.com/benefits",
         { primaryBenefits, secondaryBenefits },
         { withCredentials: true }
       )

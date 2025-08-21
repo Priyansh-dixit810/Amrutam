@@ -41,7 +41,7 @@ function FAQ({ setStep, setUform }) {
     }
 
     axios
-      .post("http://localhost:8080/faq", { faq, apd }, { withCredentials: true })
+      .post("https://amrutam-backend-sly8.onrender.com/faq", { faq, apd }, { withCredentials: true })
       .then(() => {
         setFlashMsg("FAQ saved successfully! ✅");
         setIsSaved(true);

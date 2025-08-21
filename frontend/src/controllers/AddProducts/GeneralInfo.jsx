@@ -67,7 +67,7 @@ function GeneralInfo({ setStep, setUform }) {
     });
 
     try {
-      const res = await axios.post("http://localhost:8080/generalInfo", data, {
+      const res = await axios.post("https://amrutam-backend-sly8.onrender.com/generalInfo", data, {
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
       });

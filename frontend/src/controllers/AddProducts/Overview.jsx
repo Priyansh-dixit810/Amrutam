@@ -9,7 +9,7 @@ function Overview() {
   const [flashMsg, setFlashMsg] = useState("");
   useEffect(() => {
     axios
-      .get("http://localhost:8080/overview", { withCredentials: true })
+      .get("https://amrutam-backend-sly8.onrender.com/overview", { withCredentials: true })
       .then((res) => setData(res.data))
       .catch((err) => console.error(err));
   }, []);
@@ -18,7 +18,7 @@ function Overview() {
 
   const handleSubmit = () => {
     axios
-      .post("http://localhost:8080/overview", data, { withCredentials: true })
+      .post("https://amrutam-backend-sly8.onrender.com/overview", data, { withCredentials: true })
       .then((res) => {
         setFlashMsg("Product Added Succesfully! ✅");
         setTimeout(() => {setFlashMsg(""); navigate("/products/productList")}, 3000);

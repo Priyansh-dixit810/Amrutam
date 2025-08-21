@@ -11,7 +11,7 @@ function ProductList() {
   const [selectedIndex, setSelectedIndex] = useState(null);
   const [product,setProduct] = useState([]);
   useEffect(()=>{
-    axios.get("http://localhost:8080/productList")
+    axios.get("https://amrutam-backend-sly8.onrender.com/productList")
     .then((res)=>{setProduct(res.data); console.log(product)})
     .catch((e)=>{console.log(e)})
   },[])

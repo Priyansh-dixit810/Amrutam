@@ -141,7 +141,7 @@ function Properties({ setStep, setUform }) {
     }
     const filteredDi = di.filter(item => item.emoji && item.description);
      const filteredusage = usage.filter(item => item.emoji && (item.field1 || item.field2));
-    axios.post("http://localhost:8080/properties", {di: filteredDi , usage, ingredientName, duration} ,{withCredentials: true})
+    axios.post("https://amrutam-backend-sly8.onrender.com/properties", {di: filteredDi , usage, ingredientName, duration} ,{withCredentials: true})
     .then(res => {
       setFlashMsg("Properties saved successfully! ✅");
       setIsSaved(true);

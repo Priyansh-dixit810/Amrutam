@@ -29,7 +29,7 @@ function ProductDetail({ name, description, status: initialStatus, id, onStatusC
   }
 
   const handleactive = async ()=>{
-    await axios.put(`http://localhost:8080/details/activity/${id}` ,{ status: !productStatus },{withCredentials: true})
+    await axios.put(`https://amrutam-backend-sly8.onrender.com/details/activity/${id}` ,{ status: !productStatus },{withCredentials: true})
     .then((res)=>{
       setProductStatus(res.data.status);
       onStatusChange(id, !productStatus);
@@ -37,7 +37,7 @@ function ProductDetail({ name, description, status: initialStatus, id, onStatusC
   }
 
   const handleEditInfo = async ()=>(
-    await axios.put(`http://localhost:8080/details/editInfo/${id}`, formData,{withCredentials: true})
+    await axios.put(`https://amrutam-backend-sly8.onrender.com/details/editInfo/${id}`, formData,{withCredentials: true})
     .then((res)=>{
       console.log(res);
       setEditInfo(!editInfo);
