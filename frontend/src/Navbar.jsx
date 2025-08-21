@@ -18,7 +18,7 @@ function Navbar() {
         </a>
         <div className="d-flex align-items-center flex-shrink-0">
           <div className="text-end me-2">
-            <h5 className="mb-0 name-text">Liam Michael</h5>
+            <h5 className="mb-0 name-text">Priyansh Dixit</h5>
             <span className="role-text">Admin</span>
           </div>
           <img
