@@ -1,0 +1,147 @@
+/* For tablets & mobile */
+.primary-ingredient {
+  flex: 1 1 50%;
+  max-width: 50%;
+  text-align: center;
+  border: 1px solid #CBCBCB;
+  border-radius: 10px;
+  padding: 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers image + text horizontally */
+  justify-content: center;
+}
+
+.i-image {
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: contain;
+  margin: 0 auto 10px auto; /* centers horizontally */
+  display: block;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+
+    .primary-ingredient {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 12px;
+  }
+
+  .primary-ingredient img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  .primary-ingredient p {
+    font-size: 14px !important;
+  }
+  /* Main container */
+  .container {
+    padding: 10px !important;
+  }
+
+  /* Product image */
+  .container img {
+    height: 250px !important; /* reduce from 500px */
+    border-radius: 10px !important;
+  }
+
+  /* Headings & prices */
+  .container p {
+    font-size: 16px !important; /* reduce from 28px / 24px */
+  }
+
+  /* Quantity/price boxes */
+  .container .col-3 {
+    width: 100% !important;
+    margin: 5px 0 !important;
+    padding: 10px !important;
+    font-size: 14px !important;
+  }
+
+  /* Benefits */
+  .container h2,
+  .container h3,
+  .container h4 {
+    font-size: 18px !important;
+  }
+  .container span,
+  .container .text-muted p {
+    font-size: 14px !important;
+  }
+
+  /* Primary Ingredients */
+  .container .col-5 {
+    width: 100% !important;
+    margin: 8px 0 !important;
+    padding: 15px !important;
+  }
+  .container .col-5 img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  .container .col-5 p {
+    font-size: 16px !important;
+  }
+
+  /* Submit button */
+  .btn-success {
+    width: 100% !important;
+    font-size: 16px !important;
+    padding: 10px !important;
+    border-radius: 10px !important;
+  }
+  .secondary-benefit {
+    font-size: 12px !important;
+    color: #464646 !important;
+  }
+
+  /* Primary Ingredients → all 4 in one row */
+  .primary-ingredient {
+    flex: 1 1 25%; /* 4 per row */
+    max-width: 25%;
+    padding: 8px;
+  }
+  .primary-ingredient img {
+    width: 60px !important;
+    height: 60px !important;
+    object-fit: contain;
+  }
+  .primary-ingredient p {
+    font-size: 12px !important;
+  }
+.option-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;  /* ❌ prevent wrapping */
+  gap: 8px;
+  overflow-x: auto;   /* ✅ allow horizontal scroll if needed */
+  -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
+  padding: 0;
+}
+
+.option-box {
+  flex: 1 0 30%;  
+  max-width: 130px;
+  min-width: 100px; 
+  background-color: #EDEDED;
+  border-radius: 10px;
+  text-align: center;
+  padding: 12px;
+}
+
+/* Smaller text for mobile */
+.option-box span {
+  font-size: 12px !important;
+}
+
+
+
+
+}
