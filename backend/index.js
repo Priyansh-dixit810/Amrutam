@@ -14,7 +14,7 @@ const multer  = require('multer')
 const upload = multer({storage});
 
 const sessionOptions = {
-    secret: "Mysupersecreatcode",
+    secret: process.env.SECRET_CODE,
     resave: false,
     saveUninitialized: true,
     store: store,
