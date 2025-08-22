@@ -42,7 +42,7 @@ app.use(session(sessionOptions));
 app.post("/generalInfo", upload.array('photos', 5), (req, res) => {
         console.log("Uploaded files:", req.files);
         const photoUrls = req.files.map(file => file.path || file.filename || file.url);
-        req.session.generalInfo = { ...req.body, photoUrls };
+        req.session.generalInfo = { ...(req.session.generalInfo || {}), ...req.body, photoUrls };
         console.log("Session data:", req.session.generalInfo);
         res.json({ message: "Files uploaded successfully", photoUrls });
 });
@@ -50,25 +50,27 @@ app.post("/generalInfo", upload.array('photos', 5), (req, res) => {
 
 app.post("/benefits", (req,res)=>{
     let {primaryBenefits,secondaryBenefits} = req.body;
-    req.session.benefits = { primaryBenefits, secondaryBenefits };
+req.session.benefits = { ...(req.session.benefits || {}), primaryBenefits, secondaryBenefits };
     console.log(req.session);
     res.send("Done");
 });
 
 app.post("/properties",(req,res)=>{
     let {di,usage,ingredientName,duration} = req.body;
-    req.session.properties = {di,usage,ingredientName,duration};
+    req.session.properties = { ...(req.session.properties || {}), di, usage, ingredientName, duration };
+
     console.log(req.session);
     res.send("Done");
 });
 app.post("/faq",(req,res)=>{
     let {faq,apd}= req.body;
-    req.session.faq = {faq,apd};
+    req.session.faq = { ...(req.session.faq || {}), faq, apd };
     console.log(req.session);
     res.send("DOne");
 });
 
 app.get("/overview", (req,res)=>{
+  console.log("Full session data:", req.session);
     const { generalInfo, benefits, properties, faq } = req.session;
     if (!generalInfo && !benefits && !properties && !faq) {
         console.log("Empty sesion:", req.session);
