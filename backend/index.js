@@ -32,6 +32,7 @@ app.use(cors({
   ],
   credentials: true,
 }));
+app.set('trust proxy', 1); // <-- add this line
 
 app.use(express.json()); 
 app.use(session(sessionOptions));
