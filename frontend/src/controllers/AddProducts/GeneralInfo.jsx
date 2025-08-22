@@ -154,6 +154,7 @@ function GeneralInfo({ setStep, setUform }) {
                     label="Select Quantity"
                     onChange={handleinput}
                     name="quantity"
+                    renderValue={() => null}
                   >
                     {Array.from({ length: 17 }, (_, i) => i * 10 + 10).map(
                       (num) => (

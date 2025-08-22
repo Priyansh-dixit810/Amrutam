@@ -12,14 +12,18 @@ const store = MongoStore.create({mongoUrl: url});
 const {storage} = require("./cloudConfig.js");
 const multer  = require('multer')
 const upload = multer({storage});
-
 const sessionOptions = {
     secret: process.env.SECRET_CODE,
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false, // don't save empty sessions
     store: store,
-    cookie: { maxAge: 1000 * 60 * 30 * 24, sameSite: "none",secure: true },
+    cookie: {
+        maxAge: 1000 * 60 * 30 * 24,
+        sameSite: 'none', // allow cross-site cookies
+        secure: true,     // required for HTTPS
+    },
 }
+
 
 const allowedOrigins = [
   "http://localhost:5173",                    // Local dev
