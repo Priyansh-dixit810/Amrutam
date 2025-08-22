@@ -18,7 +18,7 @@ const sessionOptions = {
     resave: false,
     saveUninitialized: true,
     store: store,
-    cookie: { maxAge: 1000 * 60 * 30 * 24 },
+    cookie: { maxAge: 1000 * 60 * 30 * 24, sameSite: "none",secure: true },
 }
 
 const allowedOrigins = [
@@ -43,7 +43,7 @@ app.post("/generalInfo", upload.array('photos', 5), (req, res) => {
         console.log("Uploaded files:", req.files);
         const photoUrls = req.files.map(file => file.path || file.filename || file.url);
         req.session.generalInfo = { ...(req.session.generalInfo || {}), ...req.body, photoUrls };
-        console.log("Session data:", req.session.generalInfo);
+        console.log("Session data:", req.session);
         res.json({ message: "Files uploaded successfully", photoUrls });
 });
 
