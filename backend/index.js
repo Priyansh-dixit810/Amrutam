@@ -23,7 +23,7 @@ const sessionOptions = {
 
 app.use(cors(
     {
-    origin: "http://localhost:5173", // frontend URL
+    origin: "https://amrutam-backend-sly8.onrender.com", // frontend URL
     credentials: true
     }
 ));             
