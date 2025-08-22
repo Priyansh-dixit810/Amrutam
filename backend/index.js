@@ -23,7 +23,7 @@ const sessionOptions = {
 
 app.use(cors(
     {
-    origin: "https://amrutam-backend-sly8.onrender.com", // frontend URL
+    origin: "https://amrutam-frontend-ecru.vercel.app", // frontend URL
     credentials: true
     }
 ));             
